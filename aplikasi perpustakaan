@@ -1,0 +1,107 @@
+using System;
+
+class Program
+{
+    static string[] titles = new string[100];
+    static string[] authors = new string[100];
+    static bool[] isAvailable = new bool[100];
+    static int bookCount = 0;
+
+    static void Main()
+    {
+        while (true)
+        {
+            Console.WriteLine("===== Aplikasi Perpustakaan =====");
+            Console.WriteLine("1. Tambah Buku");
+            Console.WriteLine("2. Lihat Daftar Buku");
+            Console.WriteLine("3. Pinjam Buku");
+            Console.WriteLine("4. Kembalikan Buku");
+            Console.WriteLine("5. Keluar");
+
+            Console.Write("Pilihan Anda: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    AddBook();
+                    break;
+                case "2":
+                    DisplayBooks();
+                    break;
+                case "3":
+                    BorrowBook();
+                    break;
+                case "4":
+                    ReturnBook();
+                    break;
+                case "5":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Pilihan tidak valid. Silakan coba lagi.");
+                    break;
+            }
+        }
+    }
+
+    static void AddBook()
+    {
+        Console.Write("Masukkan judul buku: ");
+        string title = Console.ReadLine();
+        Console.Write("Masukkan pengarang buku: ");
+        string author = Console.ReadLine();
+
+        titles[bookCount] = title;
+        authors[bookCount] = author;
+        isAvailable[bookCount] = true;
+        bookCount++;
+
+        Console.WriteLine("Buku berhasil ditambahkan!");
+    }
+
+    static void DisplayBooks()
+    {
+        Console.WriteLine("===== Daftar Buku =====");
+        for (int i = 0; i < bookCount; i++)
+        {
+            Console.WriteLine($"Judul: {titles[i]}, Pengarang: {authors[i]}, Tersedia: {(isAvailable[i] ? "Ya" : "Tidak")}");
+        }
+    }
+
+    static void BorrowBook()
+    {
+        Console.Write("Masukkan judul buku yang ingin dipinjam: ");
+        string titleToBorrow = Console.ReadLine();
+
+        int index = Array.IndexOf(titles, titleToBorrow, 0, bookCount);
+
+        if (index != -1 && isAvailable[index])
+        {
+            isAvailable[index] = false;
+            Console.WriteLine($"Anda berhasil meminjam buku: {titles[index]}");
+        }
+        else
+        {
+            Console.WriteLine($"Buku dengan judul {titleToBorrow} tidak tersedia atau tidak ditemukan.");
+        }
+    }
+
+    static void ReturnBook()
+    {
+        Console.Write("Masukkan judul buku yang ingin dikembalikan: ");
+        string titleToReturn = Console.ReadLine();
+
+        int index = Array.IndexOf(titles, titleToReturn, 0, bookCount);
+
+        if (index != -1 && !isAvailable[index])
+        {
+            isAvailable[index] = true;
+            Console.WriteLine($"Anda berhasil mengembalikan buku: {titles[index]}");
+        }
+        else
+        {
+            Console.WriteLine($"Buku dengan judul {titleToReturn} tidak dapat dikembalikan atau tidak ditemukan.");
+        }
+    }
+}
