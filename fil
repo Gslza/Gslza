@@ -1,0 +1,127 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<Book> library = new List<Book>();
+
+    static void Main()
+    {
+        while (true)
+        {
+            Console.WriteLine("===== Aplikasi Perpustakaan =====");
+            Console.WriteLine("1. Tambah Buku");
+            Console.WriteLine("2. Lihat Daftar Buku");
+            Console.WriteLine("3. Pinjam Buku");
+            Console.WriteLine("4. Kembalikan Buku");
+            Console.WriteLine("5. Keluar");
+
+            Console.Write("Pilihan Anda: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    AddBook();
+                    break;
+                case "2":
+                    DisplayBooks();
+                    break;
+                case "3":
+                    BorrowBook();
+                    break;
+                case "4":
+                    ReturnBook();
+                    break;
+                case "5":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Pilihan tidak valid. Silakan coba lagi.");
+                    break;
+            }
+        }
+    }
+
+    static void AddBook()
+    {
+        Console.Write("Masukkan judul buku: ");
+        string title = Console.ReadLine();
+        Console.Write("Masukkan pengarang buku: ");
+        string author = Console.ReadLine();
+
+        Book newBook = new Book(title, author);
+        library.Add(newBook);
+
+        Console.WriteLine("Buku berhasil ditambahkan!");
+    }
+
+    static void DisplayBooks()
+    {
+        Console.WriteLine("===== Daftar Buku =====");
+        foreach (var book in library)
+        {
+            Console.WriteLine($"Judul: {book.Title}, Pengarang: {book.Author}, Tersedia: {(book.IsAvailable ? "Ya" : "Tidak")}");
+        }
+    }
+
+    static void BorrowBook()
+    {
+        Console.Write("Masukkan judul buku yang ingin dipinjam: ");
+        string titleToBorrow = Console.ReadLine();
+
+        Book bookToBorrow = library.Find(b => b.Title.Equals(titleToBorrow, StringComparison.OrdinalIgnoreCase));
+
+        if (bookToBorrow != null && bookToBorrow.IsAvailable)
+        {
+            bookToBorrow.Borrow();
+            Console.WriteLine($"Anda berhasil meminjam buku: {bookToBorrow.Title}");
+        }
+        else
+        {
+            Console.WriteLine($"Buku dengan judul {titleToBorrow} tidak tersedia atau tidak ditemukan.");
+        }
+    }
+
+    static void ReturnBook()
+    {
+        Console.Write("Masukkan judul buku yang ingin dikembalikan: ");
+        string titleToReturn = Console.ReadLine();
+
+        Book bookToReturn = library.Find(b => b.Title.Equals(titleToReturn, StringComparison.OrdinalIgnoreCase));
+
+        if (bookToReturn != null && !bookToReturn.IsAvailable)
+        {
+            bookToReturn.Return();
+            Console.WriteLine($"Anda berhasil mengembalikan buku: {bookToReturn.Title}");
+        }
+        else
+        {
+            Console.WriteLine($"Buku dengan judul {titleToReturn} tidak dapat dikembalikan atau tidak ditemukan.");
+        }
+    }
+}
+
+class Book
+{
+    public string Title { get; }
+    public string Author { get; }
+    public bool IsAvailable { get; private set; }
+
+    public Book(string title, string author)
+    {
+        Title = title;
+        Author = author;
+        IsAvailable = true;
+    }
+
+    public void Borrow()
+    {
+        IsAvailable = false;
+    }
+
+    public void Return()
+    {
+        IsAvailable = true;
+    }
+}
