@@ -1,32 +1,44 @@
-# Aplikasi Perpustakaan
+<h1 align="center">Hi, I'm Gslza 👋</h1>
 
-Aplikasi Perpustakaan adalah program sederhana yang memungkinkan pengguna melihat daftar buku, meminjam buku.
-
-## Instalasi
-
-1. Pastikan Anda memiliki .NET SDK terinstal di komputer Anda.
-2. Clone repositori ini ke komputer Anda.
-3. Buka terminal atau command prompt dan arahkan ke direktori proyek.
-4. Jalankan perintah `dotnet run` untuk menjalankan aplikasi.
-
-## Penggunaan
-
-Setelah menjalankan aplikasi, Anda akan melihat menu dengan opsi sebagai berikut:
-
-1. **Lihat Daftar Buku:** Menampilkan daftar buku yang tersedia.
-2. **Pinjam Buku:** Memungkinkan pengguna meminjam buku dengan memasukkan kode buku.
-3. **Kembalikan Buku:** Mengembalikan buku yang telah dipinjam.
-4. **Keluar:** Menutup aplikasi.
-
-## Kontribusi
-
-Jika Anda ingin berkontribusi pada proyek ini, silakan buat *fork* dari repositori ini, lakukan perubahan, dan buat *pull request*. Kami akan dengan senang hati meninjau dan menggabungkan kontribusi Anda.
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah lisensi MIT - lihat file [LICENSE](LICENSE) untuk detailnya.
+<p align="center">
+  🚀 Final-year Computer Systems student | Aspiring Data Scientist & Embedded Developer
+</p>
 
 ---
 
-Terima kasih telah menggunakan Aplikasi Perpustakaan!
+### 👨‍💻 About Me
 
+- 🎓 I’m currently studying **Computer Systems** with a strong interest in IoT, Data Science, and Embedded Systems.
+- 📊 I’m currently learning **Data Analysis**, **Python**, and **Machine Learning** through the Associate Data Scientist Professional Program.
+- 🧠 I enjoy building real-world projects step-by-step from sensor-level to data dashboard.
+- 🌱 My GitHub is a place where I document my **project growth** from beginner to pro.
+
+---
+
+### 🛠️ Tech Stack
+
+- **Languages:** Python, C/C++, HTML
+- **Data Tools:** Pandas, Numpy, Matplotlib, Seaborn
+- **IoT Platforms:** ESP32, Arduino
+- **Others:** Git, Jupyter Notebook, Streamlit (coming soon)
+
+---
+
+### 📁 Highlight Projects
+
+- 🔍 [`iot-sensor-data-analysis`](https://github.com/Gslza/iot-sensor-data-analysis): Basic IoT + EDA project analyzing sensor data (Program 1)
+- 📈 *(Next up)*: ML + anomaly detection for Program 2 (coming soon...)
+
+---
+
+### 📫 How to Reach Me
+
+- ✉️ Email: gusliyanza02@gmail.com
+- 💼 LinkedIn: 
+- 📚 Currently learning at: UNIVERSITAS DINAMIKA BANGSA
+
+---
+
+### 💡 Fun Fact
+
+> I'm blending **hardware** and **data**—from ESP32 to Pandas! 😄
