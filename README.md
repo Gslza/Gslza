@@ -27,6 +27,7 @@
 ### 📁 Highlight Projects
 
 - 🔍 [`iot-sensor-data-analysis`](https://github.com/Gslza/iot-sensor-data-analysis): Basic IoT + EDA project analyzing sensor data (Program 1)
+- [`prom AI`](https://github.com/Gslza/v.0)
 - 📈 *(Next up)*: ML + anomaly detection for Program 2 (coming soon...)
 
 ---
