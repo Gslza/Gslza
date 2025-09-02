@@ -34,7 +34,7 @@
 
 ### 📫 How to Reach Me
 
-- ✉️ Email: gusliyanza02@gmail.com
+- ✉️ [`Email`](gusliyanza02@gmail.com)
 - 💼 LinkedIn: 
 - 📚 Currently learning at: UNIVERSITAS DINAMIKA BANGSA
 
