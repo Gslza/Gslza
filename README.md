@@ -35,7 +35,7 @@
 
 ### 📫 How to Reach Me
 
-- ✉️ Email : gusliyanza02@gmail.com
+- ✉️ Email : 
 - 💼 LinkedIn: 
 - 📚 Currently learning at: [`UNAMA`](https://unama.ac.id/)
 
